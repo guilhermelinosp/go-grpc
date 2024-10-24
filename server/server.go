@@ -20,7 +20,8 @@ func (s *server) SayHello(ctx context.Context, req *pb.HelloRequest) (*pb.HelloR
 	if ok {
 		log.Printf("Request received from %s\n", peer.Addr.String())
 	}
-	return &pb.HelloResponse{Message: "Hello, " + req.Name}, nil
+
+	return &pb.HelloResponse{Message: req.Name + " Pong"}, nil
 }
 
 func main() {
